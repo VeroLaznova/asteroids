@@ -7,14 +7,22 @@ objects = []
 # Clases:
 class Spaceship:
     def __init__ (self):
-        self.x = 0
-        self.y = 0
+        self.x = 20
+        self.y = 40
         self.rotation = 0
         self.x_speed = 0
         self.y_speed = 0
+
         image = pyglet.image.load('spaceship.png')
         self.sprite = pyglet.sprite.Sprite(image)
+        self.update_sprite()
+
         objects.append(self)
+
+    def update_sprite(self):
+        self.sprite.x = self.x
+        self.sprite.y = self.y
+
 
 spaceship = Spaceship()
 
